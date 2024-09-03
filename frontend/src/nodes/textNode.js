@@ -36,7 +36,8 @@ export const TextNode = ({ id, data }) => {
       type: "target",
       position: "left",
       id: match[1], // Variable name as ID
-      style: { top: `${index * 40 + 20}px` }, // Adjust positioning dynamically
+      style: { top: `${index * 30 + 20}px` }, // Adjust positioning dynamically
+      label: match[1], // Store the variable name
     }));
     setVariableHandles(handles);
   };
@@ -61,6 +62,22 @@ export const TextNode = ({ id, data }) => {
           className="resize-none overflow-hidden" // Ensure textarea doesn't resize manually
         />
       </label>
+      {/* Render variable labels */}
+      {variableHandles.map((handle) => (
+        <div
+          key={`label-${handle.id}`}
+          style={{
+            position: "absolute",
+            top: handle.style.top,
+            left: handle.position === "left" ? "-42px" : "auto",
+            right: handle.position === "right" ? "-50px" : "auto",
+            whiteSpace: "nowrap",
+          }}
+          className="text-xs text-[#5d7f9e]"
+        >
+          {handle.label}
+        </div>
+      ))}
     </BaseNode>
   );
 };
