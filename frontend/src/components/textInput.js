@@ -4,7 +4,7 @@ export const TextInput = ({ value, onChange, className = "" }) => {
       type="text"
       value={value}
       onChange={onChange}
-      className={`w-full mt-1 border border-gray-300 rounded p-1 ${className}`}
+      className={`w-full mt-1 border border-gray-300 rounded p-1 focus:outline-[#A9ABF7] ${className}`}
     />
   );
 };
