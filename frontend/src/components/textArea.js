@@ -21,7 +21,7 @@ export const Textarea = forwardRef(
         }}
         value={value}
         onChange={onChange}
-        className={`w-full mt-1 border border-gray-300 rounded p-1 resize-none overflow-hidden ${className}`}
+        className={`w-full mt-1 border border-gray-300 rounded p-1 pb-1.5 resize-none overflow-hidden text-black focus:outline-[#A9ABF7]  ${className}`}
       />
     );
   }
